@@ -3,10 +3,10 @@ const catchAsync = require("../utils/catchAsync")
 const utils = require("../utils")
 const {employeeservices} = require("../services")
 
-const EmployeeCreate= catchAsync(async (req, res) => {
-    const employee= await employeeservices.EmployeeCreateServices(req.body);
-    res.send({ employee});
-  });
+//const EmployeeCreate= catchAsync(async (req, res) => {
+    //const employee= await employeeservices.EmployeeCreateServices(req.body);
+    //res.send({ employee});
+  //});
   
   const getAllEmployee = catchAsync(async (req, res) => {
     const page = util.parser.tryParseInt(req.query.page, 0);
