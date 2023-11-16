@@ -1,0 +1,2 @@
+http://localhost:8082/v1/purchase/searchExpenses?searchText=lap&action_Status=Approved&page=0&limit=20&orderBy=id DESC
+http://localhost:8082/v1/purchase/searchExpenses?searchText=lap&action_Status=Rejected&page=0&limit=20&orderBy=categoryProduct ASC

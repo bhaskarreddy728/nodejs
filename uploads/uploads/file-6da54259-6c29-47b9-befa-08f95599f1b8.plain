@@ -1,0 +1,133 @@
+ <div className="py-2">
+                <h1 className="text-base  font-bold">Files</h1>
+                {/* file design 1 */}
+                <label
+                  for="invoice"
+                  className="block mb-1.5 py-2
+                            text-sm  font-bold text-textcolor"
+                >
+                  Issue(Image)
+                </label>
+                <div className="flex justify-between">
+                  <div className="flex items-center">
+                    <div className="flex justify-center items-center py-1.5 px-1.5 text-blue-600 border border-dashed border-blue-600">
+                      <div className="">
+                        {fileTypeImg ? (
+                          <img
+                            src={
+                              fileTypeImg === "application/pdf"
+                                ? `${PDF}`
+                                : `${PHOTO}`
+                            }
+                            alt=""
+                          />
+                        ) : (
+                          ""
+                        )}
+                      </div>
+                      <div className="mx-1 text-[14px]">
+                        {fileUploadImg ? `${fileUploadImg} ` : "No file chosen"}
+                      </div>
+                      <div>
+                        {" "}
+                        <label for={"file-dropzone"}>
+                          <div className="bg-primary text-white flex-nowrap text-xs md:text-justify py-1.5 px-[4px] rounded-sm text-[12px]">
+                            Browse File
+                          </div>
+                          <input
+                            name="ticketIssueImage"
+                            id="file-dropzone"
+                            type="file"
+                            accept=".pdf,image/png,image/jpeg"
+                            className="hidden"
+                            onChange={(e) => {
+                              setFileTypeImg(e.target.files[0].type);
+                              setFileUploadImg(e.target.files[0].name);
+                              setTicketIssueImage(e.target.files[0]);
+                              if (data) {
+                                setFieldValue("ticketIssueImage", data.path);
+                                setFileImgPath(data);
+                              }
+                            }}
+                          />
+                          {}
+                        </label>
+                      </div>
+                    </div>
+                    <div className="mx-2">
+                      <a
+                        href={`${fileImgPath?.destination}`}
+                        download={`${fileImgPath?.originalname}`}
+                      >
+                        {" "}
+                        <img src={`${DOWNLOAD}`} alt="" />{" "}
+                      </a>
+                    </div>
+                  </div>
+                  {/* <label
+                      for="invoice"
+                      className="block mb-1.5 py-2
+                            text-sm  font-bold text-textcolor"
+                    >
+                      Issue(Image)
+                    </label> */}
+                  <div className="flex items-center">
+                    <div className="flex justify-center items-center py-2 px-2 text-blue-600 border border-dashed border-blue-600">
+                      <div className="">
+                        {fileTypeDoc ? (
+                          <img
+                            src={
+                              fileTypeDoc === "application/pdf"
+                                ? `${PDF}`
+                                : `${PHOTO}`
+                            }
+                            alt=""
+                          />
+                        ) : (
+                          ""
+                        )}
+                      </div>
+                      <div className="mx-2 text-[14px]">
+                        {fileUploadDoc ? `${fileUploadDoc} ` : "No file chosen"}
+                      </div>
+                      <div>
+                        {" "}
+                        <label>
+                          <div className="bg-primary text-white flex-nowrap text-xs md:text-justify py-1.5 px-[6px] rounded-sm text-[12px]">
+                            Browse File
+                          </div>
+                          <input
+                            name="ticketIssueDoc"
+                            type="file"
+                            className="hidden"
+                            accept=".pdf,image/png,image/jpeg"
+                            onChange={(e) => {
+                              setFileTypeDoc(e.target.files[0].type);
+                              setFileUploadDoc(e.target.files[0].name);
+                              setTicketIssueDoc(e.target.files[0]);
+                              if (data) {
+                                setFieldValue("ticketIssueDoc", data.path);
+                                setFileDocPath(data);
+                              }
+                            }}
+                          />
+                        </label>
+                      </div>
+                    </div>
+                    <div className="mx-2">
+                      <a
+                        href={`${fileDocPath?.destination}`}
+                        download={`${fileDocPath?.originalname}`}
+                      >
+                        {" "}
+                        <img src={`${DOWNLOAD}`} alt="" />{" "}
+                      </a>
+                    </div>
+                  </div>
+                  {errors.ticketIssueDoc && touched.ticketIssueDoc && (
+                    <span className="text-red-500 font-medium text-sm">
+                      {errors.ticketIssueDoc}
+                    </span>
+                  )}
+                </div>
+              </div>

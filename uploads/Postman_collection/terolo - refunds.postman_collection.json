@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "f04422f4-3450-4887-aa9c-60588164ae50",
+		"name": "terolo - refunds",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18156152"
+	},
+	"item": [
+		{
+			"name": "uploadProfile Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImlhdCI6MTY2NzgyNTE5NCwiZXhwIjoxNjY3ODI2OTk0LCJ0eXBlIjoiYWNjZXNzIn0.2yTDt-3MxBRMAAF22-D13zuUVl6i5KptWa5-pxGpb9s",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "invoiceDoc",
+							"type": "file",
+							"src": "/C:/Users/Thinroot/Documents/key.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8082/v1/upload/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"v1",
+						"upload",
+						"profile"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createRefund Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImlhdCI6MTY2Nzg4NDkwNiwiZXhwIjoxNjY3ODg2NzA2LCJ0eXBlIjoiYWNjZXNzIn0.iPGbv0vWztLj3bidNnTDIFBEzYO6zhg7dpRAH5az36c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderId\": \"3\",\r\n    \"refundReason\": \"ClickUp project - Milestone 5\",\r\n    \"invoiceDoc\": \"invoiceDoc-9fc31459-7697-4a5d-a799-dc0ed1132ec6.plain\",\r\n    \"projectBudget\": \"10000000\",\r\n    \"currencyType\": \"INR\",\r\n    \"refundedAmount\": \"10000000\",\r\n    \"paymentMethodId\": \"2\",\r\n    \"paymentType\": \"Check\",\r\n    \"customerId\": \"2\",\r\n    \"companyName\": \"Zoho\",\r\n    \"customerName\": \"vimal raj\",\r\n    \"clientDescription\": \"ClickUp project - Milestone 5 esciation due to failed\", \r\n    \"refundStatus\": \"pending\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/v1/refund",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"v1",
+						"refund"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllRefund Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImlhdCI6MTY2Nzg4NDkwNiwiZXhwIjoxNjY3ODg2NzA2LCJ0eXBlIjoiYWNjZXNzIn0.iPGbv0vWztLj3bidNnTDIFBEzYO6zhg7dpRAH5az36c",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/v1/refund?page=0&limit=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"v1",
+						"refund"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "limit",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSingleRefund Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/v1/refund/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"v1",
+						"refund",
+						"1"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "siva",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updatedRefund Copy",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderId\": \"4\",\r\n    \"refundReason\": \"AI project - Milestone 8 esciation\",\r\n    \"clientDescription\": \"AI project - Milestone 8 esciation due to failed config\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/v1/refund/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"v1",
+						"refund",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteRefund Copy",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/v1/refund/delete/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"v1",
+						"refund",
+						"delete",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

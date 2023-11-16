@@ -1,0 +1,286 @@
+{
+	"info": {
+		"_postman_id": "7d9bff06-fed4-4f18-8e5b-2e0e1570d983",
+		"name": "Terolo_API - authendications",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18156152"
+	},
+	"item": [
+		{
+			"name": "Authendications Copy",
+			"item": [
+				{
+					"name": "emailVerifications",
+					"item": [
+						{
+							"name": "send-verification-email",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTY2NTYzNzIzNywiZXhwIjoxNjY1NjM5MDM3LCJ0eXBlIjoiYWNjZXNzIn0.n-sp-OelSjLoXRt5AZT-KQv-b54Lobv4FOR2JKeUneI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8082/v1/auth/send-verification-email",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"v1",
+										"auth",
+										"send-verification-email"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VycyI6eyJpZCI6MSwiY3JlYXRlZEF0IjoiMjAyMi0wOS0yMVQwOToxMTowMi41NjVaIn0sImlhdCI6MTY2Mzc1MTQ2MiwiZXhwIjoxNjY2MzQzNDYyLCJ0eXBlIjoicmVmcmVzaCJ9.QoqgKt48yNOoxwUtIX4c6FpIjibP4jjh5_tadvMDU6U",
+											"disabled": true
+										},
+										{
+											"key": "userId",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "vimalvr003@gmail.com",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "verify-email",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8082/v1/auth/verify-email?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTY2NTYzNzI3MCwiZXhwIjoxNjY1NjM3ODcwLCJ0eXBlIjoidmVyaWZ5RW1haWwifQ.FcN9BoMBw9qFrSNZyvdzE7ShXpxCpeSLKakCZn8pQDw",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"v1",
+										"auth",
+										"verify-email"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTY2NTYzNzI3MCwiZXhwIjoxNjY1NjM3ODcwLCJ0eXBlIjoidmVyaWZ5RW1haWwifQ.FcN9BoMBw9qFrSNZyvdzE7ShXpxCpeSLKakCZn8pQDw"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"srikanth\",\r\n    \"email\": \"srikanth.s@oneuxdigital.com\",\r\n    \"password\": \"Srikanth@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"vimalraj.m@thinroot.in\",\r\n    \"password\": \"Vimal@321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"sahana.bl@limitscale.in\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/v1/auth/forgot-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"Vimal@321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/v1/auth/reset-password?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImlhdCI6MTY2NzQ1MzA2NCwiZXhwIjoxNjY3NDUzNjY0LCJ0eXBlIjoicmVzZXRQYXNzd29yZCJ9.2ehbBQKOj2TtD4B31YO3BL-CAqUYhZYKFkc0bYgx2PY",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"auth",
+								"reset-password"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImlhdCI6MTY2NzQ1MzA2NCwiZXhwIjoxNjY3NDUzNjY0LCJ0eXBlIjoicmVzZXRQYXNzd29yZCJ9.2ehbBQKOj2TtD4B31YO3BL-CAqUYhZYKFkc0bYgx2PY"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh-tokens",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjYsImlhdCI6MTY2NzQ1MzExMywiZXhwIjoxNjY3NDUzNzEzLCJ0eXBlIjoicmVzZXRQYXNzd29yZCJ9.2tq5pmNAD7nDOdKyXYBgPh2lmskxbB5GRX-m3NTMrEY\",\r\n    \"pauseInstanceWhileRefreshing\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/v1/auth/refresh-tokens",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"auth",
+								"refresh-tokens"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTY2NTM4MDIxMSwiZXhwIjoxNjY3OTcyMjExLCJ0eXBlIjoicmVmcmVzaCJ9.NIkk3mzDEx8nRXMpwOqe0swjMnY2FmCRuPrDm4qLB_I\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/v1/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

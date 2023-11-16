@@ -1,0 +1,327 @@
+{
+	"info": {
+		"_postman_id": "f04422f4-3450-4887-aa9c-60588164ae50",
+		"name": "terolo - refunds",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18156152"
+	},
+	"item": [
+		{
+			"name": "uploadProfile Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImlhdCI6MTY2OTI3ODE4MywiZXhwIjoxNjY5Mjc5OTgzLCJ0eXBlIjoiYWNjZXNzIn0.-mUKGebivsYiyFIz8VTzr-8doKwoRNgDR7wwrJOtFKw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "invoiceDoc",
+							"type": "file",
+							"src": "/C:/Users/Thinroot/Downloads/Vimalraj_Full_Stack_Developer.docx (1).pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8082/v1/upload/profile",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"v1",
+						"upload",
+						"profile"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createRefund Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImlhdCI6MTY2OTIwNDczMywiZXhwIjoxNjY5MjA2NTMzLCJ0eXBlIjoiYWNjZXNzIn0.Rb4dPQ7d44BGff1vk4lRZDNJMrMi_dxXxhNAHt6-C8U",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderId\": \"\",\r\n    \"refundReason\": \"Terolo project - Milestone 11 payment table module\",\r\n    \"invoiceDoc\": \"invoiceDoc-9fc31459-7697-4a5d-a799-dc0ed1132ec6.plain\",\r\n    \"dateOfPaid\": \"\",\r\n    \"projectBudget\": \"3000\",\r\n    \"currencyType\": \"CAD\",\r\n    \"refundedAmount\": \"3000\",\r\n    \"paymentMethodId\": \"6\",\r\n    \"paymentType\": \"Electronic bank transfer\",\r\n    \"customerId\": \"\",\r\n    \"companyName\": \"\",\r\n    \"customerName\": \"Hari\",\r\n    \"clientDescription\": \"Terolo project - Milestone 11 esciation due to failed\", \r\n    \"refundStatus\": \"pending\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/v1/refund",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"v1",
+						"refund"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllRefund Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImlhdCI6MTY3MDMzNjM4MywiZXhwIjoxNjcwMzM4MTgzLCJ0eXBlIjoiYWNjZXNzIn0.1FpxU9WFx6H4JugeLegCMeGHpA4ibaEzplusBo23-Kg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://terolo-backend.rippleforce.in:8082/v1/refund?page=0&limit=4",
+					"protocol": "http",
+					"host": [
+						"terolo-backend",
+						"rippleforce",
+						"in"
+					],
+					"port": "8082",
+					"path": [
+						"v1",
+						"refund"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "companyName",
+							"value": "hcl",
+							"disabled": true
+						},
+						{
+							"key": "sortBy",
+							"value": "ASC",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getSingleRefund Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImlhdCI6MTY3MDIyODUyMywiZXhwIjoxNjcwMjMwMzIzLCJ0eXBlIjoiYWNjZXNzIn0.Mch2wz0E3MuFBdS2j4Adwh8fUwN65_Z-GSi4Z5GsL94",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/v1/refund/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"v1",
+						"refund",
+						"5"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updatedRefund Copy",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImlhdCI6MTY2Nzg4NDkwNiwiZXhwIjoxNjY3ODg2NzA2LCJ0eXBlIjoiYWNjZXNzIn0.iPGbv0vWztLj3bidNnTDIFBEzYO6zhg7dpRAH5az36c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refundReason\": \"ClickUp project - Milestone 10\",\r\n    \"clientDescription\": \"ClickUp project - Milestone 10 esciation due to failed details\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/v1/refund/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"v1",
+						"refund",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteRefund Copy",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImlhdCI6MTY2ODY3NDIxMiwiZXhwIjoxNjY4Njc2MDEyLCJ0eXBlIjoiYWNjZXNzIn0.Bp0s7MeUWBk6Egio_TwGLfUoSI8J5A1k0R16PfXYApY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/v1/refund/delete/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"v1",
+						"refund",
+						"delete",
+						"3"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchRefund Copy",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImlhdCI6MTY3MDIyODUyMywiZXhwIjoxNjcwMjMwMzIzLCJ0eXBlIjoiYWNjZXNzIn0.Mch2wz0E3MuFBdS2j4Adwh8fUwN65_Z-GSi4Z5GsL94",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8082/v1/refund/searchRefund?searchText=srik&startDate=2022-11-16&endDate=2022-11-22",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"v1",
+						"refund",
+						"searchRefund"
+					],
+					"query": [
+						{
+							"key": "searchText",
+							"value": "srik"
+						},
+						{
+							"key": "orderBy",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "sortBy",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "startDate",
+							"value": "2022-11-16"
+						},
+						{
+							"key": "endDate",
+							"value": "2022-11-22"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "profileCancel Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/v1/upload/profileCancel?profile=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"v1",
+						"upload",
+						"profileCancel"
+					],
+					"query": [
+						{
+							"key": "profile",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,286 @@
+{
+	"info": {
+		"_postman_id": "8374fb9c-05fa-4104-934e-df7c1e58f1e9",
+		"name": "Terolo_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18156152"
+	},
+	"item": [
+		{
+			"name": "user_API",
+			"item": [
+				{
+					"name": "emailVerifications",
+					"item": [
+						{
+							"name": "send-verification-email",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VycyI6eyJpZCI6MSwiY3JlYXRlZEF0IjoiMjAyMi0wOS0yMVQwODo1Mzo1NS41MzNaIn0sImlhdCI6MTY2Mzc1MDQzNSwiZXhwIjoxNjY2MzQyNDM1LCJ0eXBlIjoicmVmcmVzaCJ9.sAm0ViW1vaLX1VvNiTq48UgET-0YyctolWtJGm97JYE",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"email\": \"vimalvr003@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/v1/auth/send-verification-email",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"auth",
+										"send-verification-email"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VycyI6eyJpZCI6MywiY3JlYXRlZEF0IjoiMjAyMi0wOS0yMFQxNDo0NzozMy41MThaIn0sImlhdCI6MTY2MzY4NTI1MywiZXhwIjoxNjY2Mjc3MjUzLCJ0eXBlIjoicmVmcmVzaCJ9.ND9EZugCVPOIXJRQkuYIxCOa9cPm9ehMu-ggPcnntBU",
+											"disabled": true
+										},
+										{
+											"key": "userId",
+											"value": "3",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "vimalvr003@gmail.com",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "verify-email",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/v1/auth/verify-email?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VycyI6eyJpZCI6MSwiY3JlYXRlZEF0IjoiMjAyMi0wOS0yMVQwOToxMTowMi41NjVaIn0sImlhdCI6MTY2Mzc1MTQ2MiwiZXhwIjoxNjY2MzQzNDYyLCJ0eXBlIjoicmVmcmVzaCJ9.QoqgKt48yNOoxwUtIX4c6FpIjibP4jjh5_tadvMDU6U",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"auth",
+										"verify-email"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VycyI6eyJpZCI6MSwiY3JlYXRlZEF0IjoiMjAyMi0wOS0yMVQwOToxMTowMi41NjVaIn0sImlhdCI6MTY2Mzc1MTQ2MiwiZXhwIjoxNjY2MzQzNDYyLCJ0eXBlIjoicmVmcmVzaCJ9.QoqgKt48yNOoxwUtIX4c6FpIjibP4jjh5_tadvMDU6U"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"vimal\",\r\n    \"email\": \"vimalvr003@gmail.com\",\r\n    \"password\": \"Vimal@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"vimalvr003@gmail.com\",\r\n    \"password\": \"vimal@321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"vimalvr003@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/auth/forgot-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"vimal@321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/auth/reset-password?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VycyI6eyJpZCI6MSwiY3JlYXRlZEF0IjoiMjAyMi0wOS0yMVQwODo1MTowNy4xMDBaIn0sImlhdCI6MTY2Mzc1MDI2NywiZXhwIjoxNjYzNzUwODY3LCJ0eXBlIjoicmVzZXRQYXNzd29yZCJ9.wIBoeKXrTyOity-7AntTu89HNhMR2HQHSCGPCiyN37I",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"auth",
+								"reset-password"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VycyI6eyJpZCI6MSwiY3JlYXRlZEF0IjoiMjAyMi0wOS0yMVQwODo1MTowNy4xMDBaIn0sImlhdCI6MTY2Mzc1MDI2NywiZXhwIjoxNjYzNzUwODY3LCJ0eXBlIjoicmVzZXRQYXNzd29yZCJ9.wIBoeKXrTyOity-7AntTu89HNhMR2HQHSCGPCiyN37I"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh-tokens",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VycyI6eyJpZCI6MywiY3JlYXRlZEF0IjoiMjAyMi0wOS0yMVQwODoxNzoxMC4xNjRaIn0sImlhdCI6MTY2Mzc0ODIzMCwiZXhwIjoxNjY2MzQwMjMwLCJ0eXBlIjoicmVmcmVzaCJ9.q9SFotLf1yov_Wibk8RkFJ26KL-W6I-KZ2Xt2PIiBu0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/auth/refresh-tokens",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"auth",
+								"refresh-tokens"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VycyI6eyJpZCI6MSwiY3JlYXRlZEF0IjoiMjAyMi0wOS0yMVQwODo0NjowMC42NThaIn0sImlhdCI6MTY2Mzc0OTk2MCwiZXhwIjoxNjY2MzQxOTYwLCJ0eXBlIjoicmVmcmVzaCJ9.njX6M2VGkDXAfI982IXlwvKPC3_9pcC1YSNMN6brlWI\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

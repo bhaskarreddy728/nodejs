@@ -1,0 +1,170 @@
+{
+	"info": {
+		"_postman_id": "8d1b2165-2740-4d43-bc2f-c1261c919cea",
+		"name": "Terol_api_varun",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "peopleCreate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VycyI6eyJfaWQiOiI2MzA3M2IwZGExMThiYzc4Mzc2NDcwNzAiLCJlbWFpbCI6InZlbGFuQGdtYWlsLmNvbSIsImZpcnN0TmFtZSI6InNhbmpleSIsImxhc3ROYW1lIjoidmVsYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA4LTI5VDA2OjUyOjQwLjI0MloifSwiaWF0IjoxNjYxNzU1OTYwLCJleHAiOjE2NjE3NTc3NjAsInR5cGUiOiJhY2Nlc3MifQ.jjEjsA2yOfftCtprsZlnE23FD80S-Zwrg9O0kabh7z0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"sahana\",\r\n    \"experiance\":\"4\",\r\n    \"role\":\"user\",\r\n    \"abilities\":\"achieving\",\r\n    \"info\":\"the information\",\r\n    \"dob\":\"29091999\",\r\n    \"bloodGroup\":\"A+\",\r\n    \"gender\":\"male\",\r\n    \"language\":\"english\",\r\n    \"email\":\"sahana@gmail.com\",\r\n    \"skypeId\":\"sahana123\",\r\n    \"projectData\": {\r\n        \"projectDesignation\":\"developer\",\r\n\t\t\"projectCompany\":\"oneux\",\r\n\t\t\"projectYearFrom\":\"2015\",\r\n\t\t\"projectYearTo\":\"2020\",\r\n\t\t\"companySummary\":\"Good\",\r\n\t\t\"projectSummary\":\"Good\"\r\n    },\r\n    \"educationData\": {\r\n        \"collegeName\":\"new\",\r\n\t\t\"collegeField\":\"cse\",\r\n\t\t\"collegeYearFrom\":2020,\r\n\t\t\"collegeYearTo\":\"2022\",\r\n\t\t\"collegeSummary\":\"good to work\",\r\n\t\t\"schoolName\":\"rajeev\",\r\n\t\t\"schoolGrade\":\"A\",\r\n\t\t\"schoolYearFrom\":\"2018\",\r\n\t\t\"schoolYearTo\":\"2020\",\r\n\t\t\"schoolSummary\":\"good to work\"\r\n    }, \r\n    \"employeeData\": {\r\n        \"currentDesignation\":\" project\",\r\n\t\t\"currentCompany\":\"Thinroot\",\r\n\t\t\"currentTools\":\"nodejs\",\r\n\t\t\"currentSkills\":\"react\",\r\n\t\t\"experianceDesignation\":\"team lead\",\r\n\t\t\"experianceCompany\":\"crosshurdal\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/people",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"people"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllPeople",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/people/getAllPeople",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"people",
+						"getAllPeople"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOnePeople",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/people/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"people",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updatePeople",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"sahana\",\r\n    \"experiance\":\"4\",\r\n    \"role\":\"user\",\r\n    \"ability\":\"achieving\",\r\n    \"info\":\"the information\",\r\n    \"dob\":\"29/09/1999\",\r\n    \"bloodgroup\":\"A+\",\r\n    \"gender\":\"female\",\r\n    \"language\":\"english\",\r\n    \"email\":\"sahana@gmail.com\",\r\n    \"skypeId\":\"sahana123\",\r\n    \"projectData\": {\r\n        \"projectDesignation\":\"developer\",\r\n\t\t\"projectCompany\":\"oneux\",\r\n\t\t\"projectYearFrom\":\"2015\",\r\n\t\t\"projectYearTo\":\"2020\",\r\n\t\t\"companySummary\":\"Good\",\r\n\t\t\"projectSummary\":\"Good\",\r\n\t\t\"createdBy\":\"0\"\r\n    },\r\n    \"educationData\": {\r\n        \"collegeName\":\"new\",\r\n\t\t\"collegeField\":\"cse\",\r\n\t\t\"collegeYearFrom\":2020,\r\n\t\t\"collegeYearTo\":\"2022\",\r\n\t\t\"collegeSummary\":\"good to work\",\r\n\t\t\"schoolName\":\"rajeev\",\r\n\t\t\"schoolGrade\":\"A\",\r\n\t\t\"schoolYearFrom\":\"2018\",\r\n\t\t\"schoolYearTo\":\"2020\",\r\n\t\t\"schoolSummary\":\"good to work\",\r\n\t\t\"createdBy\":\"0\"\r\n    }, \r\n    \"employeeData\": {\r\n        \"currentDesignation\":\" project\",\r\n\t\t\"currentCompany\":\"Thinroot\",\r\n\t\t\"currentTools\":\"nodejs\",\r\n\t\t\"currentSkills\":\"react\",\r\n\t\t\"experianceDesignation\":\"team lead\",\r\n\t\t\"experianceCompany\":\"crosshurdal\",\r\n\t\t\"createdBy\":\"0\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/people/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"people",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletePeople",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/v1/people/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"v1",
+						"people",
+						"6"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "607bf6e3-3cfa-44fc-9a1d-f840d4128352",
+		"name": "terolo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22574404"
+	},
+	"item": [
+		{
+			"name": "Expenses",
+			"item": [
+				{
+					"name": "ExpensesGetAll",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "ExpensesPost",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImlhdCI6MTY2NDQ0NTMxMywiZXhwIjoxNjY0NDQ3MTEzLCJ0eXBlIjoiYWNjZXNzIn0.n9eb5Ce56Z3r-PVrdj21eSzvP6j13Fp8DIPIHdF9jxs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"categoryProduct\" : \"laptop2\",\r\n  \"serviceName\": \"yyy\",\r\n  \"reason\" : \"XYZ\",\r\n  \"purpose\" : \"aa\",\r\n  \"information\" : \"xy\",\r\n  \"invoice\" : \" \",\r\n  \"request\": \"cc\",\r\n  \"taxCredit\":\"yes\",\r\n  \"payableByTenant\" :\"yes\",\r\n  \"totalAmount\" : 10000,\r\n  \"excelTax\" : 1000,\r\n  \"taxPercentage\" : 25,\r\n  \"purchaseViaId\":\"4\",\r\n  \"paymentTypeId\" :\"1\",\r\n  \"branch\":\"xyz\",\r\n  \"note\" : \"xyz\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/expenses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"expenses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ExpensesById",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "ExpensesUpdate",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImlhdCI6MTY2NDQ0NTMxMywiZXhwIjoxNjY0NDQ3MTEzLCJ0eXBlIjoiYWNjZXNzIn0.n9eb5Ce56Z3r-PVrdj21eSzvP6j13Fp8DIPIHdF9jxs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"categoryProduct\" : \"laptop3\",\r\n  \"serviceName\": \"yyy\",\r\n  \"reason\" : \"XYZ\",\r\n  \"purpose\" : \"aa\",\r\n  \"information\" : \"xy\",\r\n  \"invoice\" : \" \",\r\n  \"request\": \"cc\",\r\n  \"taxCredit\":\"yes\",\r\n  \"payableByTenant\" :\"yes\",\r\n  \"totalAmount\" : 10000,\r\n  \"excelTax\" : 1000,\r\n  \"taxPercentage\" : 25,\r\n  \"purchaseViaId\":\"4\",\r\n  \"paymentTypeId\" :\"1\",\r\n  \"branch\":\"xyz\",\r\n  \"note\" : \"xyz\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/expenses/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"expenses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ExpensesDelete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImlhdCI6MTY2NDQ0NTMxMywiZXhwIjoxNjY0NDQ3MTEzLCJ0eXBlIjoiYWNjZXNzIn0.n9eb5Ce56Z3r-PVrdj21eSzvP6j13Fp8DIPIHdF9jxs",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/v1/expenses/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"expenses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "paymentViaType",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "PurchaseVia",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "FileUpload",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImlhdCI6MTY2NDc3Njg2NywiZXhwIjoxNjY0Nzc4NjY3LCJ0eXBlIjoiYWNjZXNzIn0.-GYcems-owNjh9atDpxc6a0_aDU5Lbs1SX7j2987Cr8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "invoice",
+									"type": "file",
+									"src": "/C:/Users/admin/Pictures/CertTracker/Edit Page.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/upload/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"upload",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "paymentType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImlhdCI6MTY2NDc5NzU3NSwiZXhwIjoxNjY0Nzk5Mzc1LCJ0eXBlIjoiYWNjZXNzIn0.sOJD8uUw4o658AxPeKrqZbKXown7skui3hmKfQqMnrE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"paymentType\":\"Cash\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/expenses/paymentType",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"expenses",
+								"paymentType"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

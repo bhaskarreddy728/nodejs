@@ -1,0 +1,955 @@
+{
+	"info": {
+		"_postman_id": "8374fb9c-05fa-4104-934e-df7c1e58f1e9",
+		"name": "Terolo_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18156152"
+	},
+	"item": [
+		{
+			"name": "Authendications",
+			"item": [
+				{
+					"name": "emailVerifications",
+					"item": [
+						{
+							"name": "send-verification-email",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjMsImlhdCI6MTY2NDE3Mjk3OSwiZXhwIjoxNjY0MTc0Nzc5LCJ0eXBlIjoiYWNjZXNzIn0.vkyNND9Cdh_dKt2qZTxI2cVqdG1RBAd8YzsfUpOGdXM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/v1/auth/send-verification-email",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"auth",
+										"send-verification-email"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VycyI6eyJpZCI6MSwiY3JlYXRlZEF0IjoiMjAyMi0wOS0yMVQwOToxMTowMi41NjVaIn0sImlhdCI6MTY2Mzc1MTQ2MiwiZXhwIjoxNjY2MzQzNDYyLCJ0eXBlIjoicmVmcmVzaCJ9.QoqgKt48yNOoxwUtIX4c6FpIjibP4jjh5_tadvMDU6U",
+											"disabled": true
+										},
+										{
+											"key": "userId",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "email",
+											"value": "vimalvr003@gmail.com",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "verify-email",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/v1/auth/verify-email?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTY2MzkxNDE4OCwiZXhwIjoxNjYzOTE0Nzg4LCJ0eXBlIjoidmVyaWZ5RW1haWwifQ.BqZVRIJ9cP-aACD0s3wVN6ZrvaMpog-pQgtGSrKW91A",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"v1",
+										"auth",
+										"verify-email"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTY2MzkxNDE4OCwiZXhwIjoxNjYzOTE0Nzg4LCJ0eXBlIjoidmVyaWZ5RW1haWwifQ.BqZVRIJ9cP-aACD0s3wVN6ZrvaMpog-pQgtGSrKW91A"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Gokul\",\r\n    \"email\": \"gokul@gmail.com\",\r\n    \"password\": \"Vimal@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"vimalvr003@gmail.com\",\r\n    \"password\": \"Vimal@321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"veeramvr003@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/auth/forgot-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"Vimal@321\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/auth/reset-password?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTY2MzkxNDUzOCwiZXhwIjoxNjYzOTE1MTM4LCJ0eXBlIjoicmVzZXRQYXNzd29yZCJ9.G2q5kmJQTUYY4VEWGZEaoXqUY3nje-sFcu19vkqwX-o",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"auth",
+								"reset-password"
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTY2MzkxNDUzOCwiZXhwIjoxNjYzOTE1MTM4LCJ0eXBlIjoicmVzZXRQYXNzd29yZCJ9.G2q5kmJQTUYY4VEWGZEaoXqUY3nje-sFcu19vkqwX-o"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh-tokens",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTY2MzkxNDM5MSwiZXhwIjoxNjY2NTA2MzkxLCJ0eXBlIjoicmVmcmVzaCJ9.8BZ9bjCpZNG021jphZL9AGfdN3tJOoaPov4fhoGNIak\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/auth/refresh-tokens",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"auth",
+								"refresh-tokens"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTY2MzgzNDkxMywiZXhwIjoxNjY2NDI2OTEzLCJ0eXBlIjoicmVmcmVzaCJ9.gcYPETxgIBBPogeFDxUz1jnf65Q57R9GRtcS9Is1bEc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "live API",
+			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"santhosh\",\r\n    \"email\": \"veeramvr003@gmail.com\",\r\n    \"password\": \"Vimal@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://terolo-backend.thinroot.co:8082/v1/auth/register",
+									"protocol": "http",
+									"host": [
+										"terolo-backend",
+										"thinroot",
+										"co"
+									],
+									"port": "8082",
+									"path": [
+										"v1",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"vimalvr003@gmail.com\",\r\n    \"password\": \"Vimal@321\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://terolo-backend.thinroot.co:8082/v1/auth/login",
+									"protocol": "http",
+									"host": [
+										"terolo-backend",
+										"thinroot",
+										"co"
+									],
+									"port": "8082",
+									"path": [
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "forgot-password",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"gokulrajthangavel1998@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://terolo-backend.thinroot.co:8082/v1/auth/forgot-password",
+									"protocol": "http",
+									"host": [
+										"terolo-backend",
+										"thinroot",
+										"co"
+									],
+									"port": "8082",
+									"path": [
+										"v1",
+										"auth",
+										"forgot-password"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "createUser",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTY2NDE3MjE5NywiZXhwIjoxNjY0MTczOTk3LCJ0eXBlIjoiYWNjZXNzIn0.WTCtx9CXLWrFVXCFz2OBBtFvVxMomwrFIjdpOROnSDI",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Gokul Raj\",\r\n    \"email\": \"gokulrajthangavel1998@gmail.com\",\r\n    \"password\": \"Vimal@123\",\r\n    \"roleName\": \"superAdmin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://terolo-backend.thinroot.co:8082/v1/users",
+									"protocol": "http",
+									"host": [
+										"terolo-backend",
+										"thinroot",
+										"co"
+									],
+									"port": "8082",
+									"path": [
+										"v1",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAllUsers",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTY2NDE4NTQ2MywiZXhwIjoxNjY0MTg3MjYzLCJ0eXBlIjoiYWNjZXNzIn0.5GuIL5JQQWPNJPLZ2V1rRkPIasNdJL0Ju5kHf-oVPVQ",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://terolo-backend.thinroot.co:8082/v1/users",
+									"protocol": "http",
+									"host": [
+										"terolo-backend",
+										"thinroot",
+										"co"
+									],
+									"port": "8082",
+									"path": [
+										"v1",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSingleUser",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTY2NDE4MTgwMSwiZXhwIjoxNjY0MTgzNjAxLCJ0eXBlIjoiYWNjZXNzIn0.-lA7zbtzIQ-N5i4HAWrFsc6oeDxXYa7BTScg0JBQizs",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://terolo-backend.thinroot.co:8082/v1/users/8",
+									"protocol": "http",
+									"host": [
+										"terolo-backend",
+										"thinroot",
+										"co"
+									],
+									"port": "8082",
+									"path": [
+										"v1",
+										"users",
+										"8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteUser",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjksImlhdCI6MTY2NDE3MzQxNywiZXhwIjoxNjY0MTc1MjE3LCJ0eXBlIjoiYWNjZXNzIn0.rIhnxNAPmtb4DDT2GlFxjKzKZ1bdqhnBGuoII9pBgYI",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://terolo-backend.thinroot.co:8082/v1/users/3",
+									"protocol": "http",
+									"host": [
+										"terolo-backend",
+										"thinroot",
+										"co"
+									],
+									"port": "8082",
+									"path": [
+										"v1",
+										"users",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "userLogin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"vimalvr003@gmail.com\",\r\n    \"password\": \"Vimal@321\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://terolo-backend.thinroot.co:8082/v1/auth/login",
+									"protocol": "http",
+									"host": [
+										"terolo-backend",
+										"thinroot",
+										"co"
+									],
+									"port": "8082",
+									"path": [
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateUser",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjgsImlhdCI6MTY2NDE3MjIzNCwiZXhwIjoxNjY0MTc0MDM0LCJ0eXBlIjoiYWNjZXNzIn0.cwkQXjZTi8jz1ldlG-8Fx36vtjCiN2fbLV8VHWAXSu0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\r\n        \"name\": \"Abi\",\r\n        \"email\": \"abishekk98@gmail.com\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://terolo-backend.thinroot.co:8082/v1/users/7",
+									"protocol": "http",
+									"host": [
+										"terolo-backend",
+										"thinroot",
+										"co"
+									],
+									"port": "8082",
+									"path": [
+										"v1",
+										"users",
+										"7"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "usersCreate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTY2NDE2OTAwMSwiZXhwIjoxNjY0MTcwODAxLCJ0eXBlIjoiYWNjZXNzIn0.WXS3F3_bfmL7KRX3glLa56yT-UIyYkaC5gek2VWz7f0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Madan\",\r\n    \"email\": \"veeramvr003@gmail.com\",\r\n    \"password\": \"Vimal@123\",\r\n    \"roleName\": \"superAdmin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userLogin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"gokulrajthangavel1998@gmail.com\",\r\n    \"password\": \"Vimal@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTY2NDIwMjkyMywiZXhwIjoxNjY0MjA0NzIzLCJ0eXBlIjoiYWNjZXNzIn0.Yr_gfoQkQboOBZHqPAMi2wI2akAcYnUxSf1KZWq_uxA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSingleUser",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImlhdCI6MTY2MzkxMTYxMSwiZXhwIjoxNjYzOTEzNDExLCJ0eXBlIjoiYWNjZXNzIn0.7eKhcoK9c4onCNO1H48LrxrorSsVWG_zO1acrkK48f4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/v1/users/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUSer",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImlhdCI6MTY2MzkxMTYxMSwiZXhwIjoxNjYzOTEzNDExLCJ0eXBlIjoiYWNjZXNzIn0.7eKhcoK9c4onCNO1H48LrxrorSsVWG_zO1acrkK48f4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Madan V\",\r\n    \"email\": \"madan@gmail.com\",\r\n    \"password\": \"Vimal@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/users/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjQsImlhdCI6MTY2MzkxMTYxMSwiZXhwIjoxNjYzOTEzNDExLCJ0eXBlIjoiYWNjZXNzIn0.7eKhcoK9c4onCNO1H48LrxrorSsVWG_zO1acrkK48f4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/v1/users/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "singleUser & query",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImlhdCI6MTY2NDIwMjkyMywiZXhwIjoxNjY0MjA0NzIzLCJ0eXBlIjoiYWNjZXNzIn0.Yr_gfoQkQboOBZHqPAMi2wI2akAcYnUxSf1KZWq_uxA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "roleName",
+									"value": "user",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": null,
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "invoices",
+			"item": [
+				{
+					"name": "createInvoice",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 3,\r\n    \"customerId\": \"\",\r\n    \"invoiceDate\": \"2022-09-26\",\r\n    \"dueDate\": \"2022-09-27\",\r\n    \"totalAmt\": \"1000\",\r\n    \"dueAmt\": \"100\",\r\n    \"taxValue\": \"1100\",\r\n    \"discount\": \"\",\r\n    \"shippingAddress\": \"\",\r\n    \"list_items\": \"\",\r\n    \"shippingCharge\": \"\",\r\n    \"notes\": \"\",\r\n    \"terms\": \"\",\r\n    \"createdBy\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/invoice",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"invoice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllInvoices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/invoice",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"invoice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateInvoice",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 6,\r\n    \"customerId\": \"\",\r\n    \"invoiceDate\": \"2022-09-27\",\r\n    \"dueDate\": \"2022-09-28\",\r\n    \"totalAmt\": \"10000\",\r\n    \"dueAmt\": \"100\",\r\n    \"taxValue\": \"1100\",\r\n    \"discount\": 10,\r\n    \"shippingAddress\": \"\",\r\n    \"list_items\": \"\",\r\n    \"shippingCharge\": \"\",\r\n    \"notes\": \"\",\r\n    \"terms\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/v1/invoice/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"invoice",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSingleInvoice",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/invoice/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"invoice",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteInvoice",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v1/invoice/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v1",
+								"invoice",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

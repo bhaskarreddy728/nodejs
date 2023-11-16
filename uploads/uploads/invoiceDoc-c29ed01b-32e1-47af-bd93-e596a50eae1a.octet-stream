@@ -1,0 +1,57 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Nov 16, 2022 at 12:53 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `terolo_db`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `refunds`
+--
+
+CREATE TABLE `refunds` (
+  `id` int(11) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT COMMENT 'Primary Key',
+  `refundId` varchar(12) NOT NULL COMMENT 'Populate "id" field value from the same "refunds" concate "RID-" table ',
+  `orderId` int(11) UNSIGNED NOT NULL COMMENT 'Populate "id" field value from "Order" table',
+  `refundReason` varchar(255) NOT NULL,
+  `invoiceDoc` varchar(255) NOT NULL,
+  `dateOfUpdate` datetime(3) NOT NULL DEFAULT current_timestamp(3),
+  `projectBudget` int(100) UNSIGNED NOT NULL,
+  `currencyType` char(3) NOT NULL COMMENT 'Currency value entired for ex: " INR/ USD"',
+  `refundedAmount` int(100) UNSIGNED NOT NULL,
+  `paymentMethodId` int(11) UNSIGNED NOT NULL COMMENT 'Populate "id" field value from "payment_method" table',
+  `paymentType` varchar(50) NOT NULL COMMENT '''Populate "id" field value from "payment_method" table''',
+  `customerId` int(11) UNSIGNED NOT NULL COMMENT 'Populate "id" field value from "customers" table',
+  `companyName` varchar(255) NOT NULL COMMENT 'Populate "companyName" field value from "customers" table',
+  `customerName` varchar(255) NOT NULL COMMENT 'Populate "customerName" field value from "customers" table',
+  `clientDescription` text NOT NULL,
+  `refundStatus` enum('paid','pending','cancelled') NOT NULL DEFAULT 'pending',
+  `isDeleted` tinyint(1) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'isDeleted value is "0: isVisible", "1: notVisible" on the data',
+  `createdBy` int(11) UNSIGNED NOT NULL COMMENT 'Primary Key of "user_masters" table',
+  `createdAt` datetime(3) NOT NULL DEFAULT current_timestamp(3),
+  `updatedBy` int(11) UNSIGNED DEFAULT NULL COMMENT 'Primary Key of "user_masters" table',
+  `updatedAt` datetime(3) NOT NULL DEFAULT current_timestamp(3)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='Stores refunds data';
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
