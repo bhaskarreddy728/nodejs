@@ -6,7 +6,7 @@ const createstudent = {
     studentEmail: Joi.string().required(),
     studentPhonenumber: Joi.number().integer().required(),
     studentSummary: Joi.string().required(),
-    studentStatus: Joi.boolean(),
+    studentStatus: Joi.string(),
   }),
 };
 
@@ -16,28 +16,7 @@ const getstudent = {
   }),
 };
 
-const updatestudent = {
-  params: Joi.object().keys({
-    studentId: Joi.number().integer(),
-  }),
-  body: Joi.object().keys({
-    studentName: Joi.string(),
-    studentEmail: Joi.string(),
-    studentPhonenumber: Joi.number().integer(),
-    studentSummary: Joi.string(),
-    studentStatus: Joi.boolean(),
-    studentId: Joi.string(),
-  }),
-};
-
-const deletestudent = {
-  params: Joi.object().keys({
-    studentId: Joi.number().integer(),
-  }),
-};
 module.exports = {
   createstudent,
   getstudent,
-  updatestudent,
-  deletestudent,
 };
