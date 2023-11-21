@@ -6,7 +6,7 @@ const createstudent = {
     studentEmail: Joi.string().required(),
     studentPhonenumber: Joi.number().integer().required(),
     studentSummary: Joi.string().required(),
-    studentStatus: Joi.boolean(),
+    studentStatus: Joi.string(),
   }),
 };
 

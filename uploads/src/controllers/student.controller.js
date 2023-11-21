@@ -4,10 +4,10 @@ const ApiError = require("../utils/ApiError");
 const catchAsync = require("../utils/catchAsync");
 const util = require("../utils");
 const { student } = require("../models");
-const { studentServices, peopleServices } = require("../services");
+const { studentCreateServices, peopleServices } = require("../services");
 //** create Tickets */
 const studentCreate = catchAsync(async (req, res) => {
-  const student = await studentServices.studentCreateServices(req.body);
+  const student = await studentCreateServices.studentCreateServices(req.body);
   res.send({ student });
 });
 
