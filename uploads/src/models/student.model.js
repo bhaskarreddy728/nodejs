@@ -10,11 +10,7 @@ module.exports=(sequelize,DataTypes) => {
         autoIncrement: true,
         comment: 'Primary Key'
       },
-      // studentId: {
-      //   type: DataTypes.STRING(12),
-      //   allowNull: false,
-      //   comment: 'Populate "id" field value from the same "student" table '
-      // },
+      
         studentName: {
             type: DataTypes.STRING(12),
             allowNull: false,

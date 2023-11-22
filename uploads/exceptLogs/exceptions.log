@@ -28,3 +28,4 @@ error: ::1 - POST /v1/student 500 - 31.935 ms - message: Cannot read properties 
 error: ::1 - POST /v1/student 500 - 8.055 ms - message: Cannot read properties of undefined (reading 'studentCreateServices')
 error: ::1 - POST /v1/student 500 - 29.458 ms - message: Cannot read properties of undefined (reading 'studentCreateServices')
 error: ::1 - POST /v1/student 500 - 6.746 ms - message: Cannot read properties of undefined (reading 'studentCreateServices')
+error: ::1 - GET /v1/student 500 - 46.261 ms - message: Unknown column 'model.isDeleted' in 'where clause'

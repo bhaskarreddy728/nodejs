@@ -10,9 +10,9 @@ const { db } = require("../config/config");
  * @param {Object} userBody
  * @returns {Promise<User>} Object
  */
-// const studentCreateServices = async (userBody) => {
-//   var queryString = `SELECT AUTO_INCREMENT FROM information_schema.tables WHERE table_name = 'student' AND table_schema = '${db.name}'`;
-//   var queryData = await sequelize.query(queryString, {
+// //const studentCreateServices = async (userBody) => {
+//   //var queryString = `SELECT AUTO_INCREMENT FROM information_schema.tables WHERE table_name = 'student' AND table_schema = '${db.name}'`;
+//   //var queryData = await sequelize.query(queryString, {
 //     type: sequelize.QueryTypes.SELECT,
 //   });
 //   var Id = queryData[0].AUTO_INCREMENT.toString();
@@ -32,9 +32,24 @@ const studentCreateServices = async (studentBody) => {
  
   return student.create(studentBody);
 }
+const getAllstudentServices = async (query) => {
+  const studentData = await student.findAndCountAll({
+    query,
+  });
+  return studentData;
+};
+
+const getSinglestudentServices = async (studentId) => {
+  const getData = await student.findOne({
+    where: { id: studentId, isDeleted: 0 },
+  });
+  return getData;
+};
 
 
 
 module.exports = {
   studentCreateServices,
+  getAllstudentServices,
+  getSinglestudentServices,
   };
