@@ -12,11 +12,24 @@ const createstudent = {
 
 const getstudent = {
   params: Joi.object().keys({
-    studentId: Joi.number().integer(),
+    id: Joi.number().integer(),
   }),
 };
-
+const updatestudent = {
+  params: Joi.object().keys({
+    id: Joi.number().integer(),
+  }),
+  body: Joi.object().keys({
+    
+    studentName: Joi.string(),
+    studentEmail: Joi.string(),
+    studentPhonenumber: Joi.number().integer(),
+    studentSummary: Joi.string(),
+    studentStatus: Joi.string(),
+     }),
+};
 module.exports = {
   createstudent,
   getstudent,
+  updatestudent,
 };

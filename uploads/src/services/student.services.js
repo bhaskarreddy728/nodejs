@@ -35,22 +35,42 @@ const studentCreateServices = async (studentBody) => {
 const getAllstudentServices = async (query) => {
   const studentData = await student.findAndCountAll({
     query,
-    where: { isDeleted: 0 },
   });
   return studentData;
 };
 
-const getSinglestudentServices = async (studentId) => {
+const getSinglestudentServices = async () => {
   const getData = await student.findOne({
-    where: { id: studentId, isDeleted: 0 },
   });
   return getData;
 };
-
+// const updatestudentServices = async (id,updateBody) => {
+//   const studentData = await getSinglestudentServices(id);
+//   if (!studentData)
+//     throw new ApiError(httpStatus.NOT_FOUND, "student is not found");
+//   Object.assign(studentData, updateBody);
+//   await studentData.save();
+//   return studentData;
+// };
+/**
+ * @description Update student by id
+ * @param {ObjectId} id
+ * @param {Object} updateBody
+ * @returns {Promise<User>}
+ */
+const updatestudentServices = async (id, updateBody) => {
+  const studentData = await getSinglestudentServices(id);
+  if (!studentData)
+    throw new ApiError(httpStatus.NOT_FOUND, "student is not found");
+  Object.assign(studentData, updateBody);
+  await studentData.save();
+  return studentData;
+};
 
 
 module.exports = {
   studentCreateServices,
   getAllstudentServices,
   getSinglestudentServices,
+  updatestudentServices
   };
