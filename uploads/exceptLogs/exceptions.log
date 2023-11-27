@@ -34,3 +34,4 @@ error: ::1 - PATCH /v1/student/1 500 - 29.293 ms - message: Cannot read properti
 error: ::1 - POST /v1/student 500 - 36.504 ms - message: notNull Violation: model.studentId cannot be null
 error: ::1 - POST /v1/student 500 - 41.145 ms - message: notNull Violation: model.ticketId cannot be null
 error: ::1 - PATCH /v1/student/2 400 - 7.719 ms - message: "id" is not allowed
+error: ::1 - PATCH /v1/student/4 500 - 22.717 ms - message: Unknown column 'model.isDeleted' in 'where clause'

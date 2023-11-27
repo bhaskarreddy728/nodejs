@@ -1,6 +1,6 @@
 const {STUDENT} = require("../constants/index")
 module.exports=(sequelize,DataTypes) => {
-  const studentData = sequelize.define(
+  const student = sequelize.define(
     STUDENT,
     {
       id: {
@@ -42,6 +42,6 @@ module.exports=(sequelize,DataTypes) => {
       comment: 'Stores student data'
     }
 )
-studentData.sync();
-  return studentData;
+student.sync();
+  return student;
   }
