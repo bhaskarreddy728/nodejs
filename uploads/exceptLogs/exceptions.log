@@ -1,0 +1,37 @@
+error: SequelizeConnectionError: Unknown database 'anime'
+    at ConnectionManager.connect (C:\Users\Thinroot\Music\node js\nodejs\uploads\node_modules\sequelize\lib\dialects\mysql\connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (C:\Users\Thinroot\Music\node js\nodejs\uploads\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:222:24)
+    at async C:\Users\Thinroot\Music\node js\nodejs\uploads\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:174:32
+error: SequelizeConnectionError: Unknown database 'anime'
+    at ConnectionManager.connect (C:\Users\Thinroot\Music\node js\nodejs\uploads\node_modules\sequelize\lib\dialects\mysql\connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (C:\Users\Thinroot\Music\node js\nodejs\uploads\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:222:24)
+    at async C:\Users\Thinroot\Music\node js\nodejs\uploads\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:174:32
+error: SequelizeConnectionError: Unknown database 'anime'
+    at ConnectionManager.connect (C:\Users\Thinroot\Music\node js\nodejs\uploads\node_modules\sequelize\lib\dialects\mysql\connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (C:\Users\Thinroot\Music\node js\nodejs\uploads\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:222:24)
+    at async C:\Users\Thinroot\Music\node js\nodejs\uploads\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:174:32
+error: SequelizeConnectionError: Unknown database 'anime'
+    at ConnectionManager.connect (C:\Users\Thinroot\Music\node js\nodejs\uploads\node_modules\sequelize\lib\dialects\mysql\connection-manager.js:102:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async ConnectionManager._connect (C:\Users\Thinroot\Music\node js\nodejs\uploads\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:222:24)
+    at async C:\Users\Thinroot\Music\node js\nodejs\uploads\node_modules\sequelize\lib\dialects\abstract\connection-manager.js:174:32
+error: ::1 - POST /v1/student 400 - 31.977 ms - message: "studentStatus" must be a boolean
+error: ::1 - POST /v1/student 400 - 4.347 ms - message: "studentStatus" must be a boolean
+error: ::1 - POST /v1/student 400 - 2.066 ms - message: "studentStatus" must be a boolean
+error: ::1 - POST /v1/student 400 - 42.841 ms - message: "studentStatus" must be a boolean
+error: ::1 - POST /v1/student 400 - 52.928 ms - message: "studentStatus" must be a boolean
+error: ::1 - POST /v1/student 400 - 8.306 ms - message: "studentStatus" must be a boolean
+error: ::1 - POST /v1/student 500 - 31.935 ms - message: Cannot read properties of undefined (reading 'studentCreateServices')
+error: ::1 - POST /v1/student 500 - 8.055 ms - message: Cannot read properties of undefined (reading 'studentCreateServices')
+error: ::1 - POST /v1/student 500 - 29.458 ms - message: Cannot read properties of undefined (reading 'studentCreateServices')
+error: ::1 - POST /v1/student 500 - 6.746 ms - message: Cannot read properties of undefined (reading 'studentCreateServices')
+error: ::1 - GET /v1/student 500 - 46.261 ms - message: Unknown column 'model.isDeleted' in 'where clause'
+error: ::1 - PATCH /v1/student/1 500 - 50.224 ms - message: Cannot read properties of undefined (reading 'updatestudentServices')
+error: ::1 - PATCH /v1/student/1 500 - 29.293 ms - message: Cannot read properties of undefined (reading 'updatestudentServices')
+error: ::1 - POST /v1/student 500 - 36.504 ms - message: notNull Violation: model.studentId cannot be null
+error: ::1 - POST /v1/student 500 - 41.145 ms - message: notNull Violation: model.ticketId cannot be null
+error: ::1 - PATCH /v1/student/2 400 - 7.719 ms - message: "id" is not allowed
+error: ::1 - PATCH /v1/student/4 500 - 22.717 ms - message: Unknown column 'model.isDeleted' in 'where clause'

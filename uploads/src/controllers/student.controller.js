@@ -26,6 +26,7 @@ const getSinglestudent = catchAsync(async (req, res) => {
   );
   res.send({ student: studentData });
 });
+
 const updatestudent = catchAsync(async (req, res) => {
   const student = await studentservices.updatestudentServices(
     req.params.studentId,

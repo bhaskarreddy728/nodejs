@@ -39,8 +39,10 @@ const getAllstudentServices = async (query) => {
   return studentData;
 };
 
-const getSinglestudentServices = async () => {
+const getSinglestudentServices = async (studentId) => {
   const getData = await student.findOne({
+    where: { id: studentId},
+
   });
   return getData;
 };
