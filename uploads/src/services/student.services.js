@@ -54,23 +54,37 @@ const getSinglestudentServices = async () => {
 // };
 /**
  * @description Update student by id
- * @param {ObjectId} id
+ * @param {ObjectId} studentId
  * @param {Object} updateBody
  * @returns {Promise<User>}
  */
-const updatestudentServices = async (id, updateBody) => {
-  const studentData = await getSinglestudentServices(id);
+const updatestudentServices = async (studentId, updateBody) => {
+  const studentData = await getSinglestudentServices(studentId);
   if (!studentData)
     throw new ApiError(httpStatus.NOT_FOUND, "student is not found");
   Object.assign(studentData, updateBody);
   await studentData.save();
   return studentData;
 };
-
+/**
+ * @description Delete student by id
+ * @param {ObjectId} studentId
+ * @returns {Promise<User>}
+ */
+const deletestudentServices = async (studentId) => {
+  const studentDetails = await student.findByPk(studentId);
+  if (studentDetails) {
+    studentDetails.isDeleted = 1;
+    Object.assign(studentDetails);
+  }
+  await studentDetails.save();
+  return studentDetails;
+};
 
 module.exports = {
   studentCreateServices,
   getAllstudentServices,
   getSinglestudentServices,
-  updatestudentServices
+  updatestudentServices,
+  deletestudentServices
   };

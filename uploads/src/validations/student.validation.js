@@ -6,18 +6,18 @@ const createstudent = {
     studentEmail: Joi.string().required(),
     studentPhonenumber: Joi.number().integer().required(),
     studentSummary: Joi.string().required(),
-    studentStatus: Joi.string(),
+    studentStatus: Joi.string().required(),
   }),
 };
 
 const getstudent = {
   params: Joi.object().keys({
-    id: Joi.number().integer(),
+    studentId: Joi.number().integer(),
   }),
 };
 const updatestudent = {
   params: Joi.object().keys({
-    id: Joi.number().integer(),
+    studentId: Joi.number().integer(),
   }),
   body: Joi.object().keys({
     
@@ -28,8 +28,14 @@ const updatestudent = {
     studentStatus: Joi.string(),
      }),
 };
+const deletestudent = {
+  params: Joi.object().keys({
+    studentId: Joi.number().integer(),
+  }),
+};
 module.exports = {
   createstudent,
   getstudent,
   updatestudent,
+  deletestudent
 };
