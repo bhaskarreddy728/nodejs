@@ -2,6 +2,7 @@ const Joi = require("joi");
 
 const createstudent = {
   body: Joi.object().keys({
+    studentId: Joi.number().integer(),
     studentName: Joi.string().required(),
     studentEmail: Joi.string().required(),
     studentPhonenumber: Joi.number().integer().required(),

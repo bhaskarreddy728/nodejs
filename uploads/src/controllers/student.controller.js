@@ -4,10 +4,10 @@ const ApiError = require("../utils/ApiError");
 const catchAsync = require("../utils/catchAsync");
 const util = require("../utils");
 const { student } = require("../models");
-const { studentServices, peopleServices } = require("../services");
+const { studentCreateServices, peopleServices } = require("../services");
 //** create Tickets */
 const studentCreate = catchAsync(async (req, res) => {
-  const student = await studentServices.studentCreateServices(req.body);
+  const student = await studentCreateServices.studentCreateServices(req.body);
   res.send({ student });
 });
 const getAllstudent = catchAsync(async (req, res) => {
@@ -17,17 +17,18 @@ const getAllstudent = catchAsync(async (req, res) => {
     limit,
     order: [["id", "ASC"]],
   };
-  const student = await studentServices.getAllstudentServices(query);
+  const student = await studentCreateServices.getAllstudentServices(query);
   res.send(util.response.paging(student, page, limit));
 });
 const getSinglestudent = catchAsync(async (req, res) => {
-  const studentData = await studentServices.getSinglestudentServices(
+  const studentData = await studentCreateServices.getSinglestudentServices(
     req.params.id
   );
   res.send({ student: studentData });
 });
+
 const updatestudent = catchAsync(async (req, res) => {
-  const student = await studentServices.updatestudentServices(
+  const student = await studentCreateServices.updatestudentServices(
     req.params.id,
     req.body
   );
