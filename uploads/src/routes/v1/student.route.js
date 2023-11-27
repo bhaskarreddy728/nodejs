@@ -11,9 +11,11 @@ router
    .get(studentController.getAllstudent)
    //.patch(validate(studentValidation.updatestudent), studentController.updatestudent)
    router
-   .route("/:id")
+   .route("/:studentId")
    .get(validate(studentValidation.getstudent), studentController.getSinglestudent)
    .patch(validate(studentValidation.updatestudent), studentController.updatestudent)
+   .delete(validate(studentValidation.deletestudent), studentController.deletestudent)
+
   // router
   // .route("/")
   // .get(studentController.getAllstudent)

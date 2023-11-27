@@ -1,6 +1,6 @@
 const {STUDENT} = require("../constants/index")
 module.exports=(sequelize,DataTypes) => {
-  const studentData = sequelize.define(
+  const student = sequelize.define(
     STUDENT,
     {
       id: {
@@ -10,7 +10,11 @@ module.exports=(sequelize,DataTypes) => {
         autoIncrement: true,
         comment: 'Primary Key'
       },
-      
+      studentId: {
+        type: DataTypes.STRING(12),
+        allowNull: false,
+        comment: 'Populate "id" field value from the same "student" table '
+      },
         studentName: {
             type: DataTypes.STRING(12),
             allowNull: false,
@@ -38,6 +42,6 @@ module.exports=(sequelize,DataTypes) => {
       comment: 'Stores student data'
     }
 )
-studentData.sync();
-  return studentData;
+student.sync();
+  return student;
   }
